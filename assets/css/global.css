@@ -1,0 +1,98 @@
+/* Importando a fonte Montserrat direto do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Cores Neutras */
+    --cor-preto-texto: #000000; /* Ajustado para preto puro conforme o guia */
+    --cor-cinza-escuro: #8B8B8B;
+    --cor-cinza-medio: #A6A6A6;
+    --cor-cinza-header: #CBCBCB;
+    --cor-branco: #FFFFFF;
+
+    /* Cores Primárias */
+    --azul-destaques: #90DDFF;
+    --azul-hover: #5CCOED;
+    --azul-pressed: #30A7DC;
+
+    /* Cores de Fundo */
+    --fundo-gradiente-azul: linear-gradient(180deg, #6BD1FF 0%, #FFFFFF 100%);
+    --fundo-gradiente-cinza: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
+    --fundo-cinza-claro: #F5F5F5;
+    --fundo-azul-claro: #F2FBFF;
+
+    /* Bordas (Border Radius) */
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+
+    /* Espaçamentos (Paddings / Margins) */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 40px;
+    --space-xxl: 80px;
+
+    /* Tipografia Base */
+    --font-principal: 'Montserrat', sans-serif;
+}
+
+/* Reset básico para evitar comportamento estranho dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+}
+
+body {
+    background-color: var(--cor-branco);
+    color: var(--cor-preto-texto);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Estilos de Tipografia baseados na escala do seu Figma */
+h1 {
+    font-size: 3.062rem; /* 49px */
+    line-height: 125%;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.438rem; /* 39px */
+    line-height: 125%;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.938rem; /* 31px */
+    line-height: 125%;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.562rem; /* 25px */
+    line-height: 125%;
+    font-weight: 500;
+}
+
+/* Classes utilitárias para os textos do Body */
+.text-l {
+    font-size: 1.25rem; /* 20px */
+    line-height: 120%;
+}
+
+.text-md {
+    font-size: 1rem; /* 16px */
+    line-height: 120%;
+}
+
+.text-s {
+    font-size: 0.812rem; /* 13px */
+    line-height: 120%;
+}
+
+.text-xs {
+    font-size: 0.625rem; /* 10px */
+    line-height: 120%;
+}

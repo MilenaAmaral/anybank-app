@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyBank - Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="logo">
+                <picture>
+                    <source media="(min-width: 1025px)" srcset="../../assets/images/logo-desktop.svg">
+                    <source media="(min-width: 769px)" srcset="../../assets/images/logo-tablet.png">
+                    <img src="../../assets/images/logo-mobile.png" alt="Logo AnyBank" class="logo-img">
+                </picture>
+                <span class="logo-text">Any<span>Bank</span></span>
+            </div>
+
+            <nav class="header-nav">
+                <a href="#" class="nav-link text-md">Sobre</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar transações, boletos ou contatos..." class="text-s">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </nav>
+
+            <div class="user-profile">
+                <span class="user-name text-s">Milena Amaral</span>
+                <div class="user-avatar">
+                    👤
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        
+        <aside class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="#" class="sidebar-link active text-md">Início</a>
+                <a href="#" class="sidebar-link text-md">Transferências</a>
+                <a href="#" class="sidebar-link text-md">Investimentos</a>
+                <a href="#" class="sidebar-link text-md">Outros serviços</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <section class="card card-balance">
+                <div class="balance-header">
+                    <span class="date text-s" id="current-date">Sexta-feira, 05/06/2026</span>
+                </div>
+                <div class="balance-body">
+                    <h2>Olá, Milena! :)</h2>
+                    <div class="balance-amount-box">
+                        <div class="balance-title">
+                            <span class="text-l">Saldo disponível</span>
+                            <button class="toggle-visibility-btn" id="eye-btn" aria-label="Ocultar/Mostrar saldo">👁️</button>
+                        </div>
+                        <p class="account-type text-s">Conta Corrente • Ag. 0001 • C/C 45892-3</p>
+                        <p class="amount-value" id="balance-amount">R$ 3.842,50</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card card-transaction">
+                <h3>Nova transação</h3>
+                <form class="transaction-form">
+                    <div class="form-group">
+                        <label class="text-md">Tipo de operação</label>
+                        <div class="custom-select">
+                            <select required>
+                                <option value="" disabled selected hidden>Selecione o tipo de transação</option>
+                                <option value="pix">Pix (Envio instantâneo)</option>
+                                <option value="boleto">Pagamento de Boleto</option>
+                                <option value="ted">Transferência (TED/DOC)</option>
+                                <option value="recarga">Recarga de Celular</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="text-md">Valor da operação</label>
+                        <input type="text" placeholder="R$ 0,00" class="input-amount text-md">
+                    </div>
+
+                    <button type="button" id="btn-add-transaction" class="btn-primary">Adicionar Valor</button>
+                </form>
+            </section>
+
+            <section class="card card-statement">
+                <h3>Extrato</h3>
+                <div class="statement-period">
+                    <span class="month-title text-md">Lançamentos de Junho</span>
+                    <hr class="divider">
+                </div>
+                <ul class="statement-list">
+                    <li class="statement-item">
+                        <div class="statement-info">
+                            <div>
+                                <span class="statement-value text-md">- R$ 124,90</span>
+                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">Mercado Livre *Compra</p>
+                            </div>
+                            <span class="statement-date text-s">04/06/2026</span>
+                        </div>
+                    </li>
+                    <li class="statement-item">
+                        <div class="statement-info">
+                            <div>
+                                <span class="statement-value text-md">- R$ 68,50</span>
+                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">iFood *Refeição</p>
+                            </div>
+                            <span class="statement-date text-s">03/06/2026</span>
+                        </div>
+                    </li>
+                    <li class="statement-item">
+                        <div class="statement-info">
+                            <div>
+                                <span class="statement-value text-md" style="color: #2E7D32;">+ R$ 4.200,00</span>
+                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">AnyBank - Saldo Inicial / Salário</p>
+                            </div>
+                            <span class="statement-date text-s">01/06/2026</span>
+                        </div>
+                    </li>
+                    <li class="statement-item">
+                        <div class="statement-info">
+                            <div>
+                                <span class="statement-value text-md">- R$ 164,10</span>
+                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">Posto Petrobras *Combustível</p>
+                            </div>
+                            <span class="statement-date text-s">28/05/2026</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
