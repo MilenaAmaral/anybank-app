@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyBank - Cadastro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../../index.html" class="logo">
+                <img src="../../assets/images/logo-desktop.svg" alt="Logo AnyBank" class="logo-img">
+            </a>
+            <nav class="header-nav">
+                <a href="#" class="nav-link">Sobre</a>
+                <div class="header-actions">
+                    <a href="#" class="btn-primary-header">Abrir conta</a>
+                    <a href="../login/index.html" class="btn-secondary-header">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cadastro-wrapper">
+        <div class="cadastro-card">
+            
+            <div class="cadastro-image-block">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="../../assets/images/imagem-cadastro-mobile.png">
+                    <source media="(max-width: 1024px)" srcset="../../assets/images/imagem-cadastro-tablet.png">
+                    <img src="../../assets/images/imagem-cadastro-desktop.png" alt="Mulher sorrindo e olhando o celular" class="cadastro-banner">
+                </picture>
+            </div>
+
+            <div class="cadastro-form-block">
+                <form class="cadastro-form">
+                    <h2>Cadastro</h2>
+                    <p class="form-subtitle">Preencha os campos abaixo para criar sua conta corrente!</p>
+
+                    <div class="form-group">
+                        <label for="reg-name">Nome</label>
+                        <input type="text" id="reg-name" class="input-field" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" class="input-field" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password">Senha</label>
+                        <input type="password" id="reg-password" class="input-field" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="privacy-policy" required>
+                        <label for="privacy-policy">Li e estou ciente quanto a Política de Privacidade.</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Abrir conta</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* ==========================================================================
+   1. ESTILIZAÇÃO DO HEADER (MANTENDO O PADRÃO DA AUTENTICAÇÃO)
+   ========================================================================== */
+.main-header {
+    background-color: #000000; /* Preto | Texto/Fundo do Guia de Estilos */
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* Botões do Header baseados nos Componentes */
+.btn-primary-header {
+    background-color: #90DDFF;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 24px; /* Large do Guia de Estilos */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-header:hover {
+    background-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+}
+
+.btn-secondary-header {
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-secondary-header:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DO LAYOUT PRINCIPAL (CADASTRO)
+   ========================================================================== */
+body {
+    background-color: #F5F5F5; /* Gradiente Claro / Fundo do Guia de Estilos */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cadastro-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* O Card que une Imagem + Formulário */
+.cadastro-card {
+    background-color: #FFFFFF;
+    border-radius: 16px; /* Medium | 16px das Borda do Figma */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    overflow: hidden; /* Garante que a imagem respeite o arredondamento do card */
+}
+
+/* Bloco da Esquerda (Imagem) */
+.cadastro-image-block {
+    flex: 1;
+    background-color: #F2FBFF; /* Azul Claro de Fundo do Guia de Estilos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.cadastro-banner {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 450px;
+}
+
+/* Bloco da Direita (Formulário) */
+.cadastro-form-block {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cadastro-form h2 {
+    font-size: 31px; /* H3: 31px do Guia de Estilos */
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.form-subtitle {
+    font-size: 16px; /* Md | Medium do Guia de Estilos */
+    color: #8B8B8B; /* Cinza Escuro para Placeholders/Subtítulos */
+    margin-bottom: 32px;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. CAMPOS DE ENTRADA (INPUTS) E BOTÃO
+   ========================================================================== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid #000000; /* Borda preta marcante do Figma */
+    border-radius: 16px; /* Medium | 16px */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-field::placeholder {
+    color: #8B8B8B;
+}
+
+.input-field:focus {
+    border-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+}
+
+/* Checkbox de Termos */
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    accent-color: #90DDFF; /* Cor do preenchimento ao marcar */
+    flex-shrink: 0;
+}
+
+.form-checkbox label {
+    font-size: 13px; /* S | Small do Guia de Estilos */
+    color: #000000;
+    line-height: 1.4;
+    user-select: none;
+}
+
+/* Botão Enviar Formulário */
+.btn-submit {
+    background-color: #90DDFF;
+    color: #000000;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px; /* Medium | 16px para combinar com o input */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+}
+
+.btn-submit:active {
+    background-color: #30A7DC; /* Azul Pressed do Guia de Estilos */
+}
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (TABLET E MOBILE)
+   ========================================================================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .cadastro-card {
+        flex-direction: column; /* Empilha a imagem e o formulário */
+        max-width: 540px; /* Alinha com o comportamento do layout de tablet */
+    }
+
+    .cadastro-image-block {
+        padding: 40px 40px 20px 40px;
+    }
+
+    .cadastro-form-block {
+        padding: 40px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 16px;
+    }
+
+    .header-actions {
+        display: none; /* Esconde os botões extras no header mobile para não poluir */
+    }
+
+    .cadastro-wrapper {
+        padding: 16px;
+    }
+
+    .cadastro-card {
+        border-radius: 0; /* Remove bordas nas extremidades do mobile se necessário */
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .cadastro-image-block {
+        background-color: transparent;
+        padding: 16px 16px 0 16px;
+    }
+
+    .cadastro-form-block {
+        padding: 24px 16px;
+    }
+
+    .cadastro-form h2 {
+        font-size: 25px; /* H4: 25px para telas menores */
+    }
+}
