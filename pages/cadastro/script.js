@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // === SUCESSO: ABRINDO A CONTA DE VERDADE ===
             // 1. Simula o salvamento dos dados no navegador (LocalStorage)
             localStorage.setItem('usuarioNome', nomeDigitado);
             localStorage.setItem('usuarioEmail', emailDigitado);
