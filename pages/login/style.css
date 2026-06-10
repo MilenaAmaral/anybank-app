@@ -1,6 +1,6 @@
 /* ==========================================================================
    PÁGINA DE LOGIN - ESTILOS ESPECÍFICOS
-   (O reset, fonte Montserrat e variáveis base vêm do global.css)
+
    ========================================================================== */
 
 body {
@@ -38,7 +38,7 @@ body {
     position: relative;
     max-width: 320px;
     width: 100%;
-    display: none; /* Oculto no mobile */
+    display: none; 
 }
 
 .search-bar input {
@@ -83,7 +83,7 @@ body {
 }
 
 .card-login {
-    background-color: var(--fundo-azul-claro); /* Cor suave de fundo para o card */
+    background-color: var(--fundo-azul-claro); 
     border-radius: var(--radius-large);
     width: 100%;
     max-width: 420px;
@@ -174,16 +174,16 @@ body {
     border-radius: 25px;
     font-weight: 700;
     cursor: pointer;
-    align-self: center; /* Centralizado no Mobile */
+    align-self: center; 
     transition: background-color 0.2s ease;
 }
 
 .btn-submit:hover {
-    background-color: var(--azul-hover); /* Efeito Hover usando sua variável! */
+    background-color: var(--azul-hover); 
 }
 
 .btn-submit:active {
-    background-color: var(--azul-pressed); /* Efeito de clique usando sua variável! */
+    background-color: var(--azul-pressed); 
 }
 
 /* ==========================================================================
@@ -197,7 +197,7 @@ body {
     }
     
     .search-bar {
-        display: block; /* Revela a barra de pesquisa */
+        display: block; 
     }
 
     .card-login {
@@ -214,7 +214,7 @@ body {
 
     .card-login {
         max-width: 960px;
-        flex-direction: row; /* Alinha a imagem à esquerda e formulário à direita */
+        flex-direction: row; 
         gap: var(--space-xl);
         padding: var(--space-xl);
         align-items: center;
@@ -229,7 +229,7 @@ body {
     }
     
     .btn-submit {
-        align-self: flex-start; /* Alinha à esquerda no Desktop */
+        align-self: flex-start; 
         padding: 12px 44px;
     }
 }
