@@ -1,0 +1,235 @@
+/* ==========================================================================
+   PÁGINA DE LOGIN - ESTILOS ESPECÍFICOS
+   (O reset, fonte Montserrat e variáveis base vêm do global.css)
+   ========================================================================== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Cabeçalho (Navbar) --- */
+.header {
+    background-color: var(--cor-preto-texto);
+    padding: var(--space-sm) var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.logo-container img {
+    height: 32px;
+    display: block;
+}
+
+.nav-link {
+    color: var(--cor-branco);
+    text-decoration: none;
+}
+
+.search-bar {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    display: none; /* Oculto no mobile */
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px var(--space-sm);
+    background-color: var(--cor-preto-texto);
+    border: 1px solid var(--cor-cinza-escuro);
+    border-radius: 25px;
+    color: var(--cor-branco);
+}
+
+.header-buttons {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.btn-open-account {
+    background-color: var(--azul-destaques);
+    color: var(--cor-preto-texto);
+    padding: 8px var(--space-sm);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-login-nav {
+    background-color: transparent;
+    color: var(--cor-branco);
+    padding: 8px var(--space-sm);
+    border: 1px solid var(--cor-branco);
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* --- Estrutura do Card de Login --- */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm);
+}
+
+.card-login {
+    background-color: var(--fundo-azul-claro); /* Cor suave de fundo para o card */
+    border-radius: var(--radius-large);
+    width: 100%;
+    max-width: 420px;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.image-section {
+    width: 100%;
+}
+
+.image-section picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-medium);
+}
+
+/* --- Formulário e Elementos Internos --- */
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section h2 {
+    color: var(--cor-preto-texto);
+    margin-bottom: var(--space-xs);
+}
+
+.form-subtitle {
+    color: var(--cor-cinza-escuro);
+    margin-bottom: var(--space-md);
+}
+
+.input-group {
+    margin-bottom: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--cor-preto-texto);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid var(--cor-preto-texto);
+    border-radius: var(--radius-small);
+    outline: none;
+    background-color: var(--cor-branco);
+}
+
+.forgot-password {
+    color: var(--cor-cinza-escuro);
+    text-decoration: underline;
+    margin-top: -10px;
+    margin-bottom: var(--space-sm);
+    display: inline-block;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    color: var(--cor-preto-texto);
+    margin-bottom: var(--space-lg);
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.checkbox-container input {
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cor-preto-texto);
+}
+
+.btn-submit {
+    background-color: var(--azul-destaques);
+    color: var(--cor-preto-texto);
+    border: none;
+    padding: 12px 36px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: center; /* Centralizado no Mobile */
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--azul-hover); /* Efeito Hover usando sua variável! */
+}
+
+.btn-submit:active {
+    background-color: var(--azul-pressed); /* Efeito de clique usando sua variável! */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Responsividade baseada nos breakpoints)
+   ========================================================================== */
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+    .header {
+        padding: var(--space-sm) var(--space-xl);
+    }
+    
+    .search-bar {
+        display: block; /* Revela a barra de pesquisa */
+    }
+
+    .card-login {
+        max-width: 580px;
+        padding: var(--space-xl);
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .header {
+        padding: var(--space-sm) var(--space-xxl);
+    }
+
+    .card-login {
+        max-width: 960px;
+        flex-direction: row; /* Alinha a imagem à esquerda e formulário à direita */
+        gap: var(--space-xl);
+        padding: var(--space-xl);
+        align-items: center;
+    }
+
+    .image-section {
+        width: 48%;
+    }
+
+    .form-section {
+        width: 52%;
+    }
+    
+    .btn-submit {
+        align-self: flex-start; /* Alinha à esquerda no Desktop */
+        padding: 12px 44px;
+    }
+}
