@@ -1,9 +1,8 @@
-/* Importando a fonte Montserrat direto do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
     /* Cores Neutras */
-    --cor-preto-texto: #000000; /* Ajustado para preto puro conforme o guia */
+    --cor-preto-texto: #000000; 
     --cor-cinza-escuro: #8B8B8B;
     --cor-cinza-medio: #A6A6A6;
     --cor-cinza-header: #CBCBCB;
@@ -51,7 +50,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Estilos de Tipografia baseados na escala do seu Figma */
+/* Estilos de Tipografia baseados na escala do Figma */
 h1 {
     font-size: 3.062rem; /* 49px */
     line-height: 125%;

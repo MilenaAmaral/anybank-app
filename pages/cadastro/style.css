@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. ESTILIZAÇÃO DO HEADER (MANTENDO O PADRÃO DA AUTENTICAÇÃO)
+   1. ESTILIZAÇÃO DO HEADER 
    ========================================================================== */
 .main-header {
     background-color: #000000; /* Preto | Texto/Fundo do Guia de Estilos */
@@ -40,14 +40,14 @@
     background-color: #90DDFF;
     color: #000000;
     padding: 8px 16px;
-    border-radius: 24px; /* Large do Guia de Estilos */
+    border-radius: 24px; 
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.2s;
 }
 
 .btn-primary-header:hover {
-    background-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+    background-color: #5CC0ED; 
 }
 
 .btn-secondary-header {
@@ -70,7 +70,7 @@
    2. ESTRUTURA DO LAYOUT PRINCIPAL (CADASTRO)
    ========================================================================== */
 body {
-    background-color: #F5F5F5; /* Gradiente Claro / Fundo do Guia de Estilos */
+    background-color: #F5F5F5; 
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -85,18 +85,18 @@ body {
 /* O Card que une Imagem + Formulário */
 .cadastro-card {
     background-color: #FFFFFF;
-    border-radius: 16px; /* Medium | 16px das Borda do Figma */
+    border-radius: 16px; 
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     max-width: 950px;
     width: 100%;
-    overflow: hidden; /* Garante que a imagem respeite o arredondamento do card */
+    overflow: hidden; 
 }
 
 /* Bloco da Esquerda (Imagem) */
 .cadastro-image-block {
     flex: 1;
-    background-color: #F2FBFF; /* Azul Claro de Fundo do Guia de Estilos */
+    background-color: #F2FBFF; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,15 +120,15 @@ body {
 }
 
 .cadastro-form h2 {
-    font-size: 31px; /* H3: 31px do Guia de Estilos */
+    font-size: 31px; 
     font-weight: 700;
     color: #000000;
     margin-bottom: 8px;
 }
 
 .form-subtitle {
-    font-size: 16px; /* Md | Medium do Guia de Estilos */
-    color: #8B8B8B; /* Cinza Escuro para Placeholders/Subtítulos */
+    font-size: 16px; 
+    color: #8B8B8B; 
     margin-bottom: 32px;
     line-height: 1.4;
 }
@@ -152,8 +152,8 @@ body {
 .input-field {
     width: 100%;
     padding: 16px;
-    border: 1.5px solid #000000; /* Borda preta marcante do Figma */
-    border-radius: 16px; /* Medium | 16px */
+    border: 1.5px solid #000000; 
+    border-radius: 16px; 
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     outline: none;
@@ -165,7 +165,7 @@ body {
 }
 
 .input-field:focus {
-    border-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+    border-color: #5CC0ED; 
 }
 
 /* Checkbox de Termos */
@@ -182,12 +182,12 @@ body {
     height: 24px;
     border: 1.5px solid #000000;
     border-radius: 4px;
-    accent-color: #90DDFF; /* Cor do preenchimento ao marcar */
+    accent-color: #90DDFF; 
     flex-shrink: 0;
 }
 
 .form-checkbox label {
-    font-size: 13px; /* S | Small do Guia de Estilos */
+    font-size: 13px; 
     color: #000000;
     line-height: 1.4;
     user-select: none;
@@ -200,7 +200,7 @@ body {
     border: none;
     width: 100%;
     padding: 16px;
-    border-radius: 16px; /* Medium | 16px para combinar com o input */
+    border-radius: 16px; 
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -209,11 +209,11 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: #5CC0ED; /* CORRIGIDO: Modificado de O para 0 */
+    background-color: #5CC0ED; 
 }
 
 .btn-submit:active {
-    background-color: #30A7DC; /* Azul Pressed do Guia de Estilos */
+    background-color: #30A7DC; 
 }
 
 /* ==========================================================================
@@ -223,8 +223,8 @@ body {
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
     .cadastro-card {
-        flex-direction: column; /* Empilha a imagem e o formulário */
-        max-width: 540px; /* Alinha com o comportamento do layout de tablet */
+        flex-direction: column; 
+        max-width: 540px; 
     }
 
     .cadastro-image-block {
@@ -243,7 +243,7 @@ body {
     }
 
     .header-actions {
-        display: none; /* Esconde os botões extras no header mobile para não poluir */
+        display: none; 
     }
 
     .cadastro-wrapper {
@@ -251,7 +251,7 @@ body {
     }
 
     .cadastro-card {
-        border-radius: 0; /* Remove bordas nas extremidades do mobile se necessário */
+        border-radius: 0; 
         background-color: transparent;
         box-shadow: none;
     }
@@ -266,6 +266,6 @@ body {
     }
 
     .cadastro-form h2 {
-        font-size: 25px; /* H4: 25px para telas menores */
+        font-size: 25px; 
     }
 }
