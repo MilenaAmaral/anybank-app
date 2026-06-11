@@ -48,6 +48,7 @@ body {
     background-color: var(--cor-branco);
     color: var(--cor-preto-texto);
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 /* Estilos de Tipografia baseados na escala do Figma */
