@@ -1,20 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // === 0. LÓGICA DO NOME DINÂMICO ===
+    // === 0. LÓGICA DO NOME DINÂMICO (INTEGRADO COM O NOVO CADASTRO) ===
     const userGreeting = document.getElementById('user-greeting');
-    const savedName = localStorage.getItem('usuarioNome');
+    const dadosUsuario = localStorage.getItem('usuarioLogado');
 
-    if (userGreeting && savedName) {
-        // Pega apenas o primeiro nome para a saudação ficar amigável e elegante
-        const firstName = savedName.split(' ')[0];
+    if (userGreeting && dadosUsuario) {
+        // Converte a string do LocalStorage de volta para objeto
+        const usuario = JSON.parse(dadosUsuario);
+        
+        // Pega apenas o primeiro nome
+        const firstName = usuario.nome.split(' ')[0];
         userGreeting.textContent = firstName;
+    } else if (userGreeting) {
+        // Caso não encontre ninguém logado (segurança), define um nome padrão ou redireciona
+        userGreeting.textContent = "Cliente";
     }
 
     // === 1. LÓGICA DE OCULTAR/MOSTRAR SALDO ===
     const eyeBtn = document.getElementById('eye-btn');
     const balanceAmount = document.getElementById('balance-amount');
     
-    // Captura dinamicamente o valor que está no HTML (seja ele qual for)
     let originalBalance = balanceAmount ? balanceAmount.textContent.trim() : "R$ 3.842,50";
     const hiddenBalance = "R$ ••••••";
     let isVisible = true;
@@ -44,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validação de caracteres e campos vazios
             if (isNaN(inputValue) || inputValue <= 0) {
                 alert("Por favor, digite um valor válido para a operação.");
+                inputAmount.focus();
                 return;
             }
 
@@ -60,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currency: 'BRL'
             });
 
-            // 4. Se o saldo estiver visível, atualiza na tela imediatamente
+            // 4. Se o saldo estiver visível, atualiza na tela imediatamente. Se estiver oculto, mantém oculto.
             if (isVisible) {
                 balanceAmount.textContent = originalBalance;
             }

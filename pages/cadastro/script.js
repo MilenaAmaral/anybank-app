@@ -5,51 +5,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPassword = document.getElementById('reg-password');
     const checkboxPrivacy = document.getElementById('privacy-policy');
 
-    if (cadastroForm) {
-        cadastroForm.addEventListener('submit', (e) => {
-            // Evita que a página recarregue e limpe os dados antes da validação
-            e.preventDefault();
+    if (!cadastroForm) return; // Cláusula de guarda: para se o formulário não existir
 
-            // 1. Validação de Caracteres: Nome Completo (Pelo menos nome e sobrenome)
-            const nomeDigitado = inputName.value.trim();
-            if (nomeDigitado.split(' ').length < 2) {
-                alert('Por favor, digite seu nome completo (Nome e Sobrenome).');
-                inputName.focus();
-                return;
-            }
+    cadastroForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            // 2. Validação de Caracteres: E-mail válido usando Regex simples
-            const emailDigitado = inputEmail.value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailDigitado)) {
-                alert('Por favor, insira um e-mail válido.');
-                inputEmail.focus();
-                return;
-            }
+        // 1. Coleta e limpa os valores dos inputs
+        const nomeDigitado = inputName.value.trim();
+        const emailDigitado = inputEmail.value.trim();
+        const senhaDigitada = inputPassword.value;
 
-            // 3. Validação de Caracteres: Segurança da Senha (Mínimo 6 caracteres)
-            const senhaDigitada = inputPassword.value;
-            if (senhaDigitada.length < 6) {
-                alert('A senha deve conter no mínimo 6 caracteres para sua segurança.');
-                inputPassword.focus();
-                return;
-            }
+        // 2. Executa as validações organizadas
+        if (!validarNome(nomeDigitado)) {
+            mostrarErro(inputName, 'Por favor, digite seu nome completo (Nome e Sobrenome).');
+            return;
+        }
 
-            // 4. Validação de Clique: Aceite dos Termos de Privacidade
-            if (!checkboxPrivacy.checked) {
-                alert('Você precisa ler e aceitar a Política de Privacidade para abrir a conta.');
-                return;
-            }
+        if (!validarEmail(emailDigitado)) {
+            mostrarErro(inputEmail, 'Por favor, insira um e-mail válido.');
+            return;
+        }
 
-            // 1. Simula o salvamento dos dados no navegador (LocalStorage)
-            localStorage.setItem('usuarioNome', nomeDigitado);
-            localStorage.setItem('usuarioEmail', emailDigitado);
+        if (senhaDigitada.length < 6) {
+            mostrarErro(inputPassword, 'A senha deve conter no mínimo 6 caracteres para sua segurança.');
+            return;
+        }
 
-            // 2. Feedback visual de sucesso para o cliente
-            alert(`Parabéns, ${nomeDigitado}! Sua conta no AnyBank foi aberta com sucesso. 🎉`);
+        if (!checkboxPrivacy.checked) {
+            alert('Você precisa ler e aceitar a Política de Privacidade para abrir a conta.');
+            return;
+        }
 
-            // 3. Redireciona de forma inteligente para a Dashboard que você já codificou
-            window.location.href = '../dashboard/index.html';
-        });
-    }
+        // 3. Salva os dados simulando um Banco de Dados Real (JSON no LocalStorage)
+        const novoUsuario = {
+            nome: nomeDigitado,
+            email: emailDigitado
+        };
+        
+        // Transformamos o objeto em String para salvar com segurança
+        localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
+
+        // 4. Feedback e Redirecionamento Inteligente
+        alert(`Parabéns, ${nomeDigitado}! Sua conta no AnyBank foi aberta com sucesso. 🎉`);
+        window.location.href = '../dashboard/index.html';
+    });
 });
+
+/* ==========================================================================
+   FUNÇÕES AUXILIARES DE VALIDAÇÃO (CLEAN CODE)
+   ========================================================================== */
+
+// Valida se há pelo menos duas palavras no nome
+function validarNome(nome) {
+    const partesNome = nome.split(' ').filter(part => part.length > 0);
+    return partesNome.length >= 2;
+}
+
+// Valida o formato do e-mail com regex
+function validarEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Gerencia o foco e o feedback de erro do usuário
+function mostrarErro(elementoInput, mensagem) {
+    alert(mensagem); // Mantive o alert aqui temporariamente para não quebrar seu fluxo, mas o input já ganha o foco automático abaixo
+    elementoInput.focus();
+}
