@@ -6,6 +6,9 @@
     <title>AnyBank - Dashboard</title>
 
     <link rel="icon" type="image/png" href="../../assets/images/Favicon.png?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="style.css">
@@ -26,7 +29,6 @@
                     <source media="(min-width: 769px)" srcset="../../assets/images/logo-tablet.png">
                     <img src="../../assets/images/logo-mobile.png" alt="Logo AnyBank" class="logo-img">
                 </picture>
-                <span class="logo-text">Any<span>Bank</span></span>
             </div>
 
             <nav class="header-nav">
@@ -38,10 +40,8 @@
             </nav>
 
             <div class="user-profile">
-                <span class="user-name text-s">Milena Amaral</span>
-                <div class="user-avatar">
-                    👤
-                </div>
+                <span class="user-name text-s" id="header-user-name">Cliente</span>
+                <div class="user-avatar">👤</div>
             </div>
         </div>
     </header>
@@ -64,7 +64,7 @@
                     <span class="date text-s" id="current-date">Sexta-feira, 05/06/2026</span>
                 </div>
                 <div class="balance-body">
-                    <h2>Olá, Milena! :)</h2>
+                    <h2 id="user-greeting-title">Olá! :)</h2>
                     <div class="balance-amount-box">
                         <div class="balance-title">
                             <span class="text-l">Saldo disponível</span>
@@ -78,26 +78,26 @@
 
             <section class="card card-transaction">
                 <h3>Nova transação</h3>
-                <form class="transaction-form">
+                <form class="transaction-form" id="transaction-form">
                     <div class="form-group">
                         <label class="text-md">Tipo de operação</label>
                         <div class="custom-select">
-                            <select required>
+                            <select id="transaction-type" required>
                                 <option value="" disabled selected hidden>Selecione o tipo de transação</option>
-                                <option value="pix">Pix (Envio instantâneo)</option>
-                                <option value="boleto">Pagamento de Boleto</option>
-                                <option value="ted">Transferência (TED/DOC)</option>
-                                <option value="recarga">Recarga de Celular</option>
+                                <option value="Pix">Pix (Envio instantâneo)</option>
+                                <option value="Boleto">Pagamento de Boleto</option>
+                                <option value="TED">Transferência (TED/DOC)</option>
+                                <option value="Recarga">Recarga de Celular</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label class="text-md">Valor da operação</label>
-                        <input type="text" placeholder="R$ 0,00" class="input-amount text-md">
+                        <input type="number" step="0.01" min="0.01" placeholder="R$ 0,00" class="input-amount text-md" id="transaction-value" required>
                     </div>
 
-                    <button type="button" id="btn-add-transaction" class="btn-primary">Adicionar Valor</button>
+                    <button type="submit" id="btn-add-transaction" class="btn-primary">Adicionar Valor</button>
                 </form>
             </section>
 
@@ -107,44 +107,7 @@
                     <span class="month-title text-md">Lançamentos de Junho</span>
                     <hr class="divider">
                 </div>
-                <ul class="statement-list">
-                    <li class="statement-item">
-                        <div class="statement-info">
-                            <div>
-                                <span class="statement-value text-md">- R$ 124,90</span>
-                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">Mercado Livre *Compra</p>
-                            </div>
-                            <span class="statement-date text-s">04/06/2026</span>
-                        </div>
-                    </li>
-                    <li class="statement-item">
-                        <div class="statement-info">
-                            <div>
-                                <span class="statement-value text-md">- R$ 68,50</span>
-                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">iFood *Refeição</p>
-                            </div>
-                            <span class="statement-date text-s">03/06/2026</span>
-                        </div>
-                    </li>
-                    <li class="statement-item">
-                        <div class="statement-info">
-                            <div>
-                                <span class="statement-value text-md" style="color: #2E7D32;">+ R$ 4.200,00</span>
-                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">AnyBank - Saldo Inicial / Salário</p>
-                            </div>
-                            <span class="statement-date text-s">01/06/2026</span>
-                        </div>
-                    </li>
-                    <li class="statement-item">
-                        <div class="statement-info">
-                            <div>
-                                <span class="statement-value text-md">- R$ 164,10</span>
-                                <p class="statement-desc text-xs" style="color: var(--cor-cinza-escuro);">Posto Petrobras *Combustível</p>
-                            </div>
-                            <span class="statement-date text-s">28/05/2026</span>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="statement-list" id="statement-list"></ul>
             </section>
 
         </main>
